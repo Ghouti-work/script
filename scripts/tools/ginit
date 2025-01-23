@@ -1,0 +1,7 @@
+echo "mail set"
+git config --global user.email "ghouti.yelles@gmail.com"
+echo "user set"
+git config --global user.name "Gouti-work"
+
+echo "use pass github to get tokens" 
+

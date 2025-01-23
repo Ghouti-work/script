@@ -1,0 +1,17 @@
+#! /bin/sh
+
+output="/home/h7ck3r/Pictures/screenshot/%Y-%m-%d_%T-screenshoot_.png"
+
+case "$1" in
+"select")
+  scrot "$output" --select --freeze || exit
+  ;;
+"window")
+  scrot "$output" --focused --border || exit
+  ;;
+*)
+  scrot "$output" || exit
+  ;;
+esac
+
+notify-send "screenshot taken"

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+chosen=$(cat ~/.config/scripts/conf_locations | rofi -dmenu -i -p "Config")
+
+if [ -z "$chosen" ]; then
+    exit 0
+fi
+
+alacritty -e nvim $chosen
+

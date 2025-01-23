@@ -1,0 +1,51 @@
+sudo cp ~/.config/scripts/control_scripts/Brightness/brightup /bin/
+
+sudo cp ~/.config/scripts/control_scripts/Brightness/brightdown /bin/
+
+sudo cp ~/.config/scripts/control_scripts/battery /bin/
+
+sudo cp ~/.config/scripts/control_scripts/conf_selector /bin/
+
+sudo cp ~/.config/scripts/control_scripts/bgch /bin/
+
+sudo cp ~/.config/scripts/control_scripts/emoji /bin/
+
+sudo cp ~/.config/scripts/control_scripts/dator /bin/
+
+sudo cp ~/.config/scripts/control_scripts/show_window /bin/
+
+sudo cp ~/.config/scripts/control_scripts/wttr /bin/
+
+sudo cp ~/.config/scripts/control_scripts/notify-pipe /bin/nt
+
+sudo cp ~/.config/scripts/control_scripts/noti-temp /bin/tempnt
+
+sudo cp ~/.config/scripts/control_scripts/screenshot/fullscreen /bin/
+
+sudo cp ~/.config/scripts/control_scripts/screenshot/window_shot /bin/
+
+sudo cp ~/.config/scripts/app_shortcut/auto /bin/
+
+sudo cp ~/.config/scripts/app_shortcut/image /bin/
+
+sudo cp ~/.config/scripts/app_shortcut/sound /bin/
+
+sudo cp ~/.config/scripts/keyi3.sh /bin/k3
+
+sudo cp ~/.config/scripts/minecraft.sh /bin/minecraft
+
+sudo cp ~/.config/scripts/tools/user.sh /bin/
+
+sudo cp ~/.config/scripts/tools/ginit /bin/
+
+sudo cp ~/.config/scripts/tools/install.sh /bin/sysdependancy
+
+sudo cp ~/.config/scripts/tools/venv_manager.sh /bin/vpython
+
+#sudo cp ~/.config/scripts/ /bin/
+
+#sudo cp ~/.config/scripts/ /bin/
+
+#sudo cp ~/.config/scripts/ /bin/
+
+#sudo cp ~/.config/scripts/ /bin/

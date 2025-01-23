@@ -1,0 +1,144 @@
+# Enable Powerlevel10k instant prompt. Should stay cloe to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/ghouti-dev/.zshrc'
+
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+clear
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+echo "--------------------"
+hour=`date +%H`
+if [ $hour -lt 12 ] # if hour is less than 12
+then
+echo "GOOD MORNING WORLD"
+elif [ $hour -le 16 ] # if hour is less than equal to 16
+then
+echo "GOOD AFTERNOON WORLD"
+elif [ $hour -le 20 ] # if hour is less than equal to 20
+then
+echo "GOOD EVENING WORLD"
+echo "--------------------"
+echo "sudo pacman -Syu "
+sudo pacman -Syu 
+else
+echo "GOOD NIGHT WORLD"
+fi
+echo "--------------------"
+echo "         "
+neofetch 
+echo "--------------------"
+echo "0xor0day play shell" 
+echo "--------------------"
+
+alias rm="rm -i" 
+alias lsa='ls -a'
+alias cls='clear'
+alias ex='exit'
+alias key='cat /scripts/doc/key'
+alias upkey='code /scripts/doc/key'
+alias backupkey='sudo cp /scripts/doc/key /scripts/backup_file/key_backup'
+alias at='alacritty-themes'
+# btop 
+alias top="btop"
+
+# ---- Eza (better ls) -----
+alias ls="eza --icons=always"
+
+# ---- Zoxide (better cd) ----
+eval "$(zoxide init zsh)"
+alias cd="z"
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+# -- pacman --
+alias pacman-v='pacman --version'
+alias pacman-dep='sudo pacman -S --needed base-devel git'
+alias pacman-re='sudo pacman -U /scripts/pacman/pacman-6.0.2-9-x86_64.pkg.tar.zst'
+# update on one command
+alias update='sudo pacman -Syu'
+# -- time --
+alias nowtime='date +"%T"' #this will show the current time in 24hrs format as HH:MM:SS
+alias nowdate='date +"%d-%m-%Y"' #this will show the current date in format dd-MM-YY
+#Displaying iptables information the easy way :)
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers' #this will display all lines of your current iptables
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers' #this will display all your INCOMING rules in iptables
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers' #this will display all your OUTGOING rules in iptables
+#reset
+alias re='source ~/.zshrc'
+alias up='code ~/.zshrc'
+alias backupzsh='sudo cp /home/ghouti-dev/.zshrc /scripts/backup_file/.zshrc_backup'
+alias fix='sudo cp /scripts/backup_file/.zshrc_backup /home/ghouti-dev/.zshrc' 
+# neofetch 
+alias n='neofetch'
+# obsidian
+alias hobs='cd ~/Documents/my_brain_obs/'
+alias cobs='cd ~/Documents/my_brain_obs/98_code/'
+alias todo='code ~/Documents/my_brain_obs/To\ Do.md'
+alias ntodo='nvim ~/Documents/my_brain_obs/To\ Do.md'
+# java
+alias ijava='sudo pacman -S jdk-openjdk'
+# tmux 
+alias skill="tmux kill-session -a"
+
+# -- blach arch -- 
+alias blackarch-install='sudo sh /scripts/strap.sh'
+alias bcat='sudo pacman -Sg | grep blackarch'
+
+# -- yay -- 
+alias yay-install='git clone https://aur.archlinux.org/yay.git'
+
+# -- python -- 
+alias ipython='sudo pacman -S python3'
+alias ipip='sudo pacman -S python-pip'
+
+# blur my shell install 
+alias bmsi='sudo sh /scipts/blur_my_shell_script_install.sh'
+
+# -- hacking tools -- 
+
+alias msf="msfconsole"
+alias go="gobuster"
+
+
+# -- ai tools -- 
+alias iollama="curl -fsSL https://ollama.com/install.sh | sh" 
+alias orca2="ollama run orca2"
+
+# -- liberary -- 
+alias x11="sudo pacman -S libx11"

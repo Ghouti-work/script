@@ -1,0 +1,2 @@
+sudo openvpn /home/h7ck3r/.config/scripts/openvpn/0xor1Day.ovpn 
+echo "open vpn started"

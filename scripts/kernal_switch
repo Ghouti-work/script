@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Function to switch to a specific kernel
+switch_kernel() {
+    kernel_name="$1"
+
+    # Check if the kernel is installed
+    if ! pacman -Q -q "$kernel_name"; then
+        echo "Kernel '$kernel_name' is not installed."
+        return 1
+    fi
+
+    # Set the default kernel
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+    # Set the desired kernel as the default
+    sudo sed -i "s/^default=.*$/default='$kernel_name'/" /boot/grub/grub.cfg
+
+    # Update the GRUB configuration
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+    # Reboot the system
+    sudo reboot
+}
+
+# Function to switch to the Linux kernel
+switch_to_linux() {
+    switch_kernel "linux"
+}
+
+# Function to switch to the Linux ZEN kernel
+switch_to_zen() {
+    switch_kernel "linux-zen"
+}
+
+# Main menu
+echo "Kernel Switcher"
+echo "1. Switch to Linux"
+echo "2. Switch to Linux ZEN"
+echo "3. Exit"
+
+read choice
+
+case "$choice" in
+    1) switch_to_linux ;;
+    2) switch_to_zen ;;
+    3) exit ;;
+    *) echo "Invalid choice." ;;
+esac

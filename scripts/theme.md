@@ -1,0 +1,11 @@
+Orange
+Teal
+Pro
+Minimal
+Catppuccin
+Amethyst
+Dark_Cyan
+Dark
+Red
+Purple
+Yellow
